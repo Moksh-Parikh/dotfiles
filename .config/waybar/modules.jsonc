@@ -56,6 +56,11 @@
     "on-click": "~/.config/waybar/scripts/update_system.sh"
   },
 
+  "custom/onScreenKeyboard": {
+    "format": "󰌌",
+    "on-click": "kill -34 $(pgrep \"wvkbd-mobintl\")"
+  },
+
   // CAVA Audio Visualizer
   "custom/cava": {
     "exec": "~/.config/waybar/scripts/cava.sh",
@@ -210,11 +215,11 @@
 
   // current song on Spotify
   "custom/spotify": {
-    "format": " {text}",
-    "return-type": "json",
+    "format": " {text}",
+    // "return-type": "json",
     "interval": 10,
-    "exec-if": "pgrep spotify",
-    "exec": "~/.config/waybar/scripts/spotifySong.sh",
+    // "exec-if": "pgrep spotify",
+    "exec": "playerctl metadata --format '{{title}} by {{artist}}'",
     "hide-empty-text": true,
     "tooltip": "{text}",
     "max-length": 40

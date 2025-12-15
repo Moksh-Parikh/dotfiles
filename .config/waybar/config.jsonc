@@ -10,7 +10,8 @@
     "sway/workspaces",
     "custom/updates",
     "custom/cava",
-    "custom/spotify"
+    "custom/spotify",
+    "custom/onScreenKeyboard"
   ],
   
   "modules-center": [
