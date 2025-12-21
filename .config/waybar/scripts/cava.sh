@@ -39,4 +39,4 @@ EOF
 pkill -f "cava -p $config_file"
 
 # Read stdout from cava and perform substitution in a single sed command
-cava -p "$config_file" | sed -u "$dict"
+cava -p "$config_file" | sed -u "$dict" | sed -u -e 's/▁▁▁▁▁▁▁▁▁▁▁▁▁▁//g'

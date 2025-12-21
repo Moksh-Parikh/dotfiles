@@ -47,7 +47,8 @@
     "format": "♪ {}",
     "on-click-right": "playerctl next",
     "on-double-click-right": "playerctl previous",
-    "on-click": "playerctl play-pause"
+    "on-click": "playerctl play-pause",
+    "hide-empty-text": true
   },
 
   // Memory / CPU / Temp

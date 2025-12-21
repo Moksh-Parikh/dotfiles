@@ -40,6 +40,8 @@ vim.o.cursorline = true
 vim.o.number = true
 vim.o.autowrite = true
 
+vim.g.editorconfig = false
+
 vim.g.lightline = {
     colorscheme = "ayu_mirage",
     active = {
