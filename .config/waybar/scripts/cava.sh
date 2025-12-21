@@ -21,7 +21,7 @@ cat >"$config_file" <<EOF
 # Older systems show significant CPU use with default framerate
 # Setting maximum framerate to 30  
 # You can increase the value if you wish
-framerate = 60
+framerate = 45
 bars = 14
 
 [input]
@@ -35,8 +35,38 @@ data_format = ascii
 ascii_max_range = 7
 EOF
 
+# status=$(playerctl -a status -i firefox,chromium 2>/dev/null)
+increment=99
+status=1
+info=$(playerctl metadata -i chromium,firefox --format '{{title}} by {{artist}}' 2>/dev/null)
+
+detectPlayerStatus() {
+    while IFS='$\n' read -r line; do
+        ((increment++))
+        # status=$(playerctl -a status -i firefox,chromium 2>/dev/null)
+        # if [[ $status == "No players found" ]]; then
+        #     echo
+        #     sleep 1
+        # fi
+        
+        if [[ $status != 0 ]]; then
+            echo ""
+            sleep 1
+            pgrep 'spotify|kew' > /dev/null
+            status=$?
+        else
+            echo "$line $info"
+            if [[ $increment -ge 100 ]]; then
+                pgrep 'spotify|kew' > /dev/null
+                status=$?
+                info=$(playerctl metadata -i chromium,firefox --format '{{title}} by {{artist}}' 2>/dev/null)
+                increment=0
+            fi
+        fi
+    done
+}
+
 # Kill cava if it's already running
 pkill -f "cava -p $config_file"
 
-# Read stdout from cava and perform substitution in a single sed command
-cava -p "$config_file" | sed -u "$dict" | sed -u -e 's/▁▁▁▁▁▁▁▁▁▁▁▁▁▁//g'
+cava -p "$config_file" | sed -u "$dict" | detectPlayerStatus

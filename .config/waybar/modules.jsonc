@@ -44,7 +44,7 @@
   // CAVA Audio Visualizer
   "custom/cava": {
     "exec": "~/.config/waybar/scripts/cava.sh",
-    "format": "♪ {}",
+    "format": " {}",
     "on-click-right": "playerctl next",
     "on-double-click-right": "playerctl previous",
     "on-click": "playerctl play-pause",
@@ -172,16 +172,6 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  },
-
-  // current song on Spotify
-  "custom/spotify": {
-    "format": " {text}",
-    "interval": 10,
-    "exec": "playerctl metadata -i chromium,firefox --format '{{title}} by {{artist}}'",
-    "hide-empty-text": true,
-    "tooltip": "{text}",
-    "max-length": 40
   },
 
   // Tray
