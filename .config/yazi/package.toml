@@ -1,0 +1,14 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "7ca66b4"
+hash = "4fccaaf10c36dc2466e2438a386ff017"
+
+[[plugin.deps]]
+use = "Sonico98/exifaudio"
+rev = "4506f9d"
+hash = "4761fffb60a12d37096c34a356380cdf"
+
+[[flavor.deps]]
+use = "ficd0/ashen:ashen"
+rev = "8add1b8"
+hash = "f9aed559dc6820dbc7253253be1bb6d2"

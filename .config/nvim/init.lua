@@ -30,6 +30,8 @@ vim.call("plug#begin")
 	Plug("neovim/nvim-lspconfig")
 
     Plug("chomosuke/typst-preview.nvim")
+
+    Plug("kjuq/nvim-sixelview")
 vim.call("plug#end")
 
 vim.o.tabstop = 4

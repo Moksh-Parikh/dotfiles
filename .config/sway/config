@@ -18,6 +18,9 @@ set $term foot
 # Your preferred application launcher
 set $menu ~/.config/rofi/launchers/type-2/launcher.sh 
 
+set $rofiStyleDir ~/.config/rofi/
+set $theme style
+
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
@@ -67,8 +70,6 @@ input type:touchpad {
 #
 # Basics:
 #
-set $rofiStyleDir ~/.config/rofi/calculator/
-set $theme style
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -77,7 +78,8 @@ set $theme style
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+equal exec rofi -show calc -modi calc -no-show-match -no-sort -theme $rofiStyleDir/$theme.rasi
+    bindsym $mod+equal exec rofi -show calc -modi calc -no-show-match -no-sort -theme $rofiStyleDir/calculator/$theme.rasi
+    bindsym $mod+Shift+s exec ~/.config/sway/scripts/menu-surfraw.sh
     bindsym $mod+m exec rofimoji
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -92,7 +94,6 @@ set $theme style
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exit
-    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -242,15 +243,13 @@ include /etc/sway/config.d/*
 font pango:Fira Code Nerd Font 12
 seat seat0 xcursor_theme xcursor-breeze 33
 
-exec waybar
+# exec waybar
 exec swaync
 exec gammastep-indicator
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /home/halt/.config/sway/scripts/rotateScreen.sh
 exec nm-applet
 
-exec QT_QPA_PLATFORM=xcb kdeconnectd
-exec --no-startup-id (sleep 1 && xfconnect-indicator.py) || (sleep 1 && xfconnect-indicator.py) || (sleep 1 && xfconnect-indicator.py) || (sleep 1 && xfconnect-indicator.py) || (sleep 1 && xfconnect-indicator.py)
 exec wvkbd-mobintl -L 400 --bg 2A2A2A --fg 555555 --fg-sp 7A7A7A --press 789978 --press-sp 7788AA --hidden
 
-exec swaybg -i ~/Pictures/Wallpapers/swayWallpaper.jpg -m fill
+exec swaybg -i ~/.config/sway/Wallpapers/swayWallpaper.jpg -m fill

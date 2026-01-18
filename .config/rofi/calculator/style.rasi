@@ -1,34 +1,79 @@
 @import "~/.config/rofi/colors/black.rasi"
 
-* {
-    transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  false;
-    width:                       450px;
-    height:                      300px;
-    x-offset:                    0px;
-    y-offset:                    0px;
-
-    enabled:                     true;
-    margin:                      0px;
-    padding:                     10px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background;
-    cursor:                      "default";
-    text-color:                  @foreground;
+configuration {
+    calc {
+        calc-command-history: true;
+        calc-error-color: "#FFFFC5";
+        hint-result: "Res: ";
+        hint-welcome: "Calcoolator";
+    }
 }
 
 mainbox {
-    enabled:                     true;
-    spacing:                     0px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
-    border-color:                @selected;
-    background-color:            rgb(0,0,255);
-    // children:                    [ "listview", "entry" ];
+    spacing: 0.15em;
+    background-color: @background;
+}
+
+case-indicator {
+    enabled: false;
+}
+
+window {
+    background-color: @background;
+    columns: 1;
+    vertical-align: 0.5;
+    spacing: 10px;
+    padding: 10px;
+    border-color: @background-alt;
+    border: 2px solid;
+    width: 400px;
+}
+
+message {
+    text-color: @selected;
+    padding: 10px;
+    font: "Fira Code Nerd Font 12";
+    background-color: @active;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @background-alt;
+}
+
+inputbar {
+    background-color: @selected;
+    text-color: @foreground;
+    font: "Fira Code Nerd Font 12";
+    padding: 1em;
+}
+
+entry {
+    width: 100%;
+    background-color: @selected;
+}
+
+prompt {
+    enabled: false;
+}
+
+listview {
+    text-color: @selected;
+    background-color: @background-alt;
+    padding: 0.75em;
+}
+
+element {
+    text-color: @selected;
+    background-color: @background-alt;
+    padding: 0.1em;
+}
+
+element-text {
+    text-color: #DDDDDD;
+    background-color: @background-alt;
+}
+
+element-icon {
+    enabled: false;
 }
