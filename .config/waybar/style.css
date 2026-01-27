@@ -4,9 +4,11 @@
 *
 * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
 *
+* Adapted from https://github.com/Zilero232/arch-install-kit
+*
 * =========================================================================== */
 
-@import 'themes/kanagawa.css';
+@import 'themes/lacklustre.css';
 
 /* -----------------------------------------------------------------------------
 * Base styles
@@ -53,36 +55,31 @@ tooltip label {
 #workspaces {
 	background: @background-primary;
 	padding: 4px;
+    color: @text;
 	margin: 6px 2px;
 	border-radius: 12px;
-	border: 2px solid @border-color;
+	/* border: 2px solid @border-color; */
 }
 
 #workspaces button {
-	padding: 6px 10px;
+	padding: 4px 8px;
 	margin: 0 2px;
 	background: @background-primary;
 	color: @subtext0;
 	border-radius: 8px;
 	font-weight: bold;
-	border: 1px solid @border-color;
+	/* border: 1px solid @border-color; */
 }
 
 #workspaces button:hover {
-	background: @overlay2;
+	background: @background-hover;
 	color: @base;
-	/* border-color: @green; */
 }
 
 #workspaces button.active,
 #workspaces button.focused {
 	opacity: 1;
-	border-color: @pink;
-}
-
-#workspaces button.empty {
-	opacity: 0.3;
-	background: @background-secondary;
+	/* border-color: @pink; */
 }
 
 #workspaces button.urgent {
@@ -124,8 +121,7 @@ tooltip label {
 
 #memory {
 	background: @background-primary;
-	color: @green;
-	border-left: 4px solid @green;
+	color: @text;
 	border-radius: 12px 0 0 12px;
 	margin: 6px 0;
 	padding: 8px 12px;
@@ -133,16 +129,16 @@ tooltip label {
 
 #cpu {
 	background: @background-primary;
-	color: @blue;
-	border-left: 4px solid @blue;
+	color: @text;
+	border-left: 4px solid @border-color;
 	margin: 6px 0px 6px 0;
 	padding: 8px 12px;
 }
 
 #temperature {
 	background: @background-primary;
-	color: @teal;
-	border-left: 4px solid @teal;
+	color: @text;
+	border-left: 4px solid @border-color;
 	border-radius: 0 12px 12px 0;
 	margin: 6px 2px 6px 0;
 	padding: 8px 12px;
@@ -161,7 +157,6 @@ tooltip label {
 #battery {
 	background: @background-primary;
 	color: @green;
-	border-left: 4px solid @green;
 	margin: 6px 2px;
 	padding: 8px 12px;
 	border-radius: 12px;
@@ -169,13 +164,11 @@ tooltip label {
 
 #battery.charging {
 	color: @yellow;
-	border-left: 4px solid @yellow;
 }
 
-#battery.warning {
+#battery.warning:not(.charging) {
 	background: @warning;
 	color: @base;
-	border-left: 4px solid @peach;
 }
 
 #battery.critical:not(.charging) {
@@ -190,8 +183,7 @@ tooltip label {
 
 #backlight {
 	background: @background-primary;
-	color: @yellow;
-	border-left: 4px solid @yellow;
+	color: @text;
 	border-radius: 12px 0 0 12px;
 	margin: 6px 0 6px 2px;
 	padding: 8px 12px;
@@ -199,8 +191,8 @@ tooltip label {
 
 #pulseaudio {
 	background: @background-primary;
-	color: @yellow;
-	border-left: 4px solid @yellow;
+	color: @text;
+	border-left: 4px solid @subtext1;
 	border-radius: 0 12px 12px 0;
 	margin: 6px 2px 6px 0;
 	padding: 8px 12px;
@@ -218,7 +210,6 @@ tooltip label {
 #network {
 	background: @background-primary;
 	color: @green;
-	border-left: 4px solid @green;
 	margin: 6px 2px;
 	padding: 8px 12px;
 	border-radius: 12px;
@@ -235,70 +226,23 @@ tooltip label {
 }
 
 /* -----------------------------------------------------------------------------
-* Language
-* -------------------------------------------------------------------------- */
-
-#language {
-	background: @background-primary;
-	color: @mauve;
-	border-left: 4px solid @mauve;
-	margin: 6px 0 6px 2px;
-	padding: 8px 12px;
-	border-radius: 12px 0 0 12px;
-}
-
-#keyboard-state {
-	background: @background-primary;
-	color: @mauve;
-	border-left: 4px solid @mauve;
-	margin: 6px 2px 6px 0;
-	padding: 8px 12px;
-	border-radius: 0 12px 12px 0;
-}
-
-/* -----------------------------------------------------------------------------
 * Custom modules
 * -------------------------------------------------------------------------- */
 
 #custom-launcher {
 	background: @background-primary;
-	color: @mauve;
-	font-size: 16px;
+	color: @subtext0;
+	font-size: 26px;
 	font-weight: bold;
 	margin: 6px 2px 6px 8px;
-	padding: 8px 14px 8px 10px;
+	padding: 0px 4px 0px 2px;
 	border-radius: 12px;
 	border: 2px solid @border-color;
 }
 
-#custom-weather {
-	background: @background-primary;
-	color: @blue;
-	border-left: 4px solid @blue;
-	margin: 6px 2px;
-	padding: 8px 12px;
-	border-radius: 12px;
-}
-
-#custom-updates {
-	background: @background-primary;
-	color: @yellow;
-	border-left: 4px solid @yellow;
-	margin: 6px 2px;
-	padding: 8px 12px;
-	border-radius: 12px;
-}
-
-#custom-updates.has-updates {
-	background: @warning;
-	color: @base;
-	border-left: 4px solid @peach;
-}
-
 #custom-notification {
 	background: @background-primary;
-	color: @lavender;
-	border-left: 4px solid @lavender;
+	color: @text;
 	margin: 6px 2px;
 	padding: 8px 12px;
 	border-radius: 12px;
@@ -307,27 +251,24 @@ tooltip label {
 #custom-cava {
 	background: @background-primary;
 	color: @lavender;
-	border-left: 4px solid @lavender;
 	margin: 6px 2px;
 	padding: 8px 12px;
 	border-radius: 12px;
 }
 
-#custom-onScreenKeyboard {
+#custom-onScreenKeyboard.deactivated {
 	background: @background-primary;
-	color: @lavender;
-	border-left: 4px solid @lavender;
-	margin: 6px 2px;
+	color: @sky;
+	margin: 6px 4px;
 	padding: 8px 14px 8px 10px;
 	border-radius: 12px;
 }
 
-#custom-spotify {
-	background: @background-primary;
-	color: @green;
-	border-left: 4px solid @green;
-	margin: 6px 2px;
-	padding: 8px 12px;
+#custom-onScreenKeyboard.activated {
+	background: @sky;
+	color: @background-primary;
+	margin: 6px 4px;
+	padding: 8px 14px 8px 10px;
 	border-radius: 12px;
 }
 
@@ -340,7 +281,6 @@ tooltip label {
 	padding: 6px 10px;
 	margin: 6px 8px 6px 2px;
 	border-radius: 12px;
-	border: 2px solid @border-color;
 }
 
 #tray > .passive {
@@ -360,16 +300,9 @@ tooltip label {
 #idle_inhibitor {
 	background: @background-primary;
 	color: @yellow;
-	border-left: 4px solid @yellow;
 	margin: 6px 2px;
 	padding: 8px 12px;
 	border-radius: 12px;
-}
-
-#idle_inhibitor.activated {
-	background: @yellow;
-	border-left: 4px solid @background-primary;
-	color: @base;
 }
 
 #mode {
@@ -386,7 +319,6 @@ tooltip label {
 * -------------------------------------------------------------------------- */
 
 #clock:hover,
-#battery:hover,
 #cpu:hover,
 #memory:hover,
 #temperature:hover,
@@ -395,9 +327,6 @@ tooltip label {
 #pulseaudio:hover,
 #custom-launcher:hover,
 #custom-notification:hover,
-#custom-weather:hover,
-#custom-updates:hover,
-#language:hover,
 #custom-cava:hover {
 	opacity: 0.8;
 }

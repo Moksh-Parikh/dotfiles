@@ -13,5 +13,11 @@ fi
 #   source /usr/share/zsh/manjaro-zsh-prompt
 # fi
 
-# export PATH="$PATH:~/.local/bin:~/Apps/spotify:~/Games/WarThunder/:~/Apps/DrMemory/DrMemory-Linux-2.6.0/bin"
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+path+=('/home/halt/Downloads/Image-ExifTool-13.45')
+
 eval "$(oh-my-posh init zsh --config ~/Documents/atomic.omp.json)"

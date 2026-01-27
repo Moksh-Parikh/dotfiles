@@ -9,18 +9,18 @@
     "custom/launcher",
     "sway/workspaces",
     "custom/updates",
-    "custom/cava",
-    "custom/onScreenKeyboard"
+    "custom/cava"
   ],
   
   "modules-center": [
+    "custom/onScreenKeyboard",
     "memory",
     "cpu",
-    "temperature"
+    "temperature",
+    "idle_inhibitor"
   ],
   
   "modules-right": [
-    "idle_inhibitor",
     "battery",
     "backlight",
     "pulseaudio",

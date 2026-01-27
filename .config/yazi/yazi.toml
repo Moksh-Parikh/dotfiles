@@ -1,3 +1,14 @@
+[preview]
+tab_size        = 2
+max_width       = 900
+max_height      = 1080
+cache_dir       = ""
+image_filter    = "triangle"
+image_quality   = 75
+sixel_fraction  = 15
+ueberzug_scale  = 1
+ueberzug_offset = [ 0, 0, 0, 0 ]
+
 [plugin]
 prepend_previewers = [
     { mime = "audio/*",   run = "exifaudio"}

@@ -1,7 +1,7 @@
 {
   // Launcher
   "custom/launcher": {
-    "format": "",
+    "format": "󱓞",
     "on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh",
     "tooltip": false,
     "min-length": 5
@@ -38,7 +38,9 @@
 
   "custom/onScreenKeyboard": {
     "format": "󰌌",
-    "on-click": "kill -34 $(pgrep \"wvkbd-mobintl\")"
+    "exec": "~/.config/waybar/scripts/keyboard.sh",
+    "on-click": "zsh -c 'kill -SIGUSR1 $(pgrep keyboard.sh)'",
+    "return-type": "json"
   },
 
   // CAVA Audio Visualizer

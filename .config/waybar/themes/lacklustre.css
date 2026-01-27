@@ -1,5 +1,6 @@
 /*
-* Kanagawa palette
+* Lacklustre.nvim inspired palette (https://github.com/slugbyte/lackluster.nvim)
+* adapted from https://github.com/Zilero232/arch-install-kit
 */
 
 /* Base colors */
@@ -9,8 +10,8 @@
 
 /* Text colors */
 @define-color text     #AAAAAA;
-@define-color subtext0 #a89984;
-@define-color subtext1 #c8c093;
+@define-color subtext0 #7A7A7A;
+@define-color subtext1 #555555;
 
 /* Surface colors */
 @define-color surface0 #2a2a37;
@@ -23,13 +24,13 @@
 @define-color overlay2 #8b8b8b;
 
 /* Accent colors */
-@define-color blue      #CBE4F9;
-@define-color lavender  #EECFEE;
+@define-color blue      #7788AA;
+@define-color lavender  #dea8ba;
 @define-color sapphire  #C2D1FF;
-@define-color sky       #CDF5F6;
+@define-color sky       #72A4BD;
 @define-color teal      #B4CDCD;
-@define-color green     #CFFDBC;
-@define-color yellow    #FFFFC5;
+@define-color green     #789978;
+@define-color yellow    #FFF18D;
 @define-color peach     #F9EBDF;
 @define-color maroon    #e46876;
 @define-color red       #e82424;
@@ -39,14 +40,14 @@
 @define-color rosewater #dcd7ba;
 
 /* Additional styling variables - using solid colors instead of rgba */
-@define-color background-primary   #080808;
-@define-color background-secondary #2A2A2A;
+@define-color background-primary   #000000;
+@define-color background-secondary #444444;
 @define-color background-hover     #444444;
 @define-color border-color         #555555;
 
 /* Status colors */
 @define-color success @green;
-@define-color warning @yellow;
+@define-color warning #FFAA88;
 @define-color error   @red;
 @define-color info    @blue;
 
