@@ -160,8 +160,8 @@
     "tooltip-format": "Left: Notifications\nRight: Do not disturb",
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "none": "",
+      "notification": "<span rise='8pt'><span foreground='#789978'><sup></sup></span></span>",
+      "none": "<span rise='8pt'></span>",
       "dnd-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "dnd-none": "",
       "inhibited-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",

@@ -1,236 +1,245 @@
-@define-color cc-bg #2A2A2A;
-@define-color textColor #DEEEED;
-@define-color buttonHovered #DF8A68;
-@define-color noti-border-color #080808;
-@define-color noti-bg #191919;
-@define-color noti-bg-darker #191919;
-@define-color noti-bg-hover rgb(27, 27, 43);
-@define-color noti-bg-focus rgba(27, 27, 27, 0.6);
-@define-color text-color #CCCCCC;
-@define-color text-color-disabled #DEEEED;
-@define-color bg-selected #88a988;
- 
+@define-color cc-bg #191919;
+@define-color noti-bg #444444;
+@define-color noti-bg-darker #2A2A2A;
+
+@define-color text-color #d6d6dd;
+@define-color text-color-muted #9a9aa3;
+@define-color accent #789978;
+@define-color accent-warning #FFAA99;
+
 * {
     font-family: FiraCode Nerd Font;
-    font-weight: bold;
-	font-size: 16px;
-    border-radius: 0px;
-}
- 
-/* .control-center .notification-row:focus { */
-/*     opacity: 1; */
-/*     /1* background: @noti-bg-darker; *1/ */
-/*     border-radius: 0px; */
-/* } */
- 
-.notification-row {
-    outline: none;
-    margin: 10px;
-    padding: 0;
-    border-radius: 0px;
-}
- 
-.notification {
-    background: transparent;
-    margin: 0px;
-    border-radius: 0px;
-    color: #fdf;
-}
- 
-.notification-content {
-    background: @cc-bg;
-    padding: 7px;
-    /* font-size: 14px; */
-    border-radius: 0px;
-    border: 2px solid #555555;
-    margin: 0;
-}
- 
-.close-button {
-    background: #789978;
-    color: @cc-bg;
-    text-shadow: none;
-    padding: 0;
-    border-radius: 0px;
-    margin-top: 5px;
-    margin-right: 5px;
-}
- 
-.close-button:hover {
+    font-weight: 600;
+    font-size: 16px;
     box-shadow: none;
-    background: @buttonHovered;
-    transition: all .15s ease-in-out;
-    border: none
 }
- 
+
+scrolledwindow scrollbar {
+    opacity: 0;
+    background: transparent;
+    border: none;
+}
+
+scrolledwindow scrollbar slider {
+    background: transparent;
+    border: none;
+}
+
+scrolledwindow scrollbar trough {
+    background: transparent;
+    border: none;
+}
+
+list > row {
+    background: @cc-bg;
+}
+
+.notification image,
+.notification .image,
+.notification-content image {
+    border-radius: 8px;
+}
+
+.notification-row {
+    background: transparent;
+    outline: none;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+}
+
+.notification:hover {
+    background: @noti-bg;
+}
+
+.notification {
+    background: @noti-bg;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.notification-content {
+    background: @noti-bg;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.close-button {
+    background: @accent;
+    color: @cc-bg;
+    border-radius: 4px;
+    padding: 4px 4px;
+}
+
+.close-button:hover {
+    background: @accent-warning;
+    color: @cc-bg;
+}
+
+.notification-default-action:hover {
+    background: transparent;
+}
+
 .notification-action {
-    color: @textColor;
-    /* border: 2px solid #7A7A7A; */
-    /* border-top: none; */
-    /* border-radius: 0px; */
-    background: #555555;
+    color: @text-color;
+    background: @cc-bg;
+    border-radius: 0px 0px 8px 8px;
 }
- 
-.notification-default-action:hover,
-.notification-action:hover {
-    color: @textColor;
-    background: #555555;
-    border-radius: 0px;
-}
- 
+
 .summary {
-	padding-top: 7px;
-    font-size: 17px;
-    font-weight: bold;
-    color: @textColor;
+    font-size: 16px;
+    color: @text-color;
 }
- 
+
 .time {
     font-size: 13px;
-    color: #FFAA88;
-    margin-right: 24px
+    color: @text-color-muted;
 }
- 
+
 .body {
-    font-size: 15px;
-    color: @textColor;
+    font-size: 14px;
+    color: @text-color-muted;
 }
- 
+
 .control-center {
     background: @cc-bg;
-    border: 2px solid #444444;
-    border-radius: 2px;
+    border-radius: 8px;
 }
- 
+
 .control-center-list {
-    background: transparent
+    background: transparent;
 }
- 
-.control-center-list-placeholder {
-    opacity: .5
-}
- 
-.floating-notifications {
-    background: transparent
-}
- 
+
 .blank-window {
-    background: alpha(black, 0.1)
+    background: alpha(black, 0.15);
 }
- 
+
 .widget-title {
-    color: #DEEEED;
-    background: @noti-bg-darker;
-    padding: 5px 10px;
-    margin: 10px 10px 5px 10px;
-    font-size: 1.5rem;
-    border-radius: 5px;
-}
- 
-.widget-title>button {
-    font-size: 1rem;
     color: @text-color;
-    text-shadow: none;
-    background: @noti-bg;
-    box-shadow: none;
-    border-radius: 5px;
+    background: @noti-bg-darker;
+    padding: 6px 12px;
+    margin: 10px;
+    font-size: 1.3rem;
+    border-radius: 6px;
 }
- 
-.widget-title>button:hover {
-    background: @buttonHovered;
+
+.widget-title > button {
+    font-size: 0.95rem;
+    color: @text-color;
+    background: transparent;
+    border-radius: 4px;
+}
+
+.widget-title > button:hover {
+    background: @accent-warning;
     color: @cc-bg;
 }
- 
+
 .widget-dnd {
     background: @noti-bg-darker;
-    padding: 5px 10px;
+    padding: 6px 12px;
     margin: 5px 10px 10px 10px;
+    border-radius: 6px;
+    color: @text-color;
+}
+
+.widget-dnd > switch {
     border-radius: 5px;
-    font-size: large;
-    color: #f2e5bc;
+    background: @noti-bg;
 }
- 
-.widget-dnd>switch {
-    border-radius: 4px;
-    background: #665c54;
+
+.widget-dnd > switch:checked {
+    background: @accent;
 }
- 
-.widget-dnd>switch:checked {
-    background: @buttonHovered;
-    /* border: 1px solid #BF6A48; */
-}
- 
-.widget-dnd>switch slider {
+
+.widget-dnd > switch slider {
     background: @cc-bg;
-    border-radius: 5px
+    border-radius: 5px;
 }
- 
-.widget-dnd>switch:checked slider {
-    background: @cc-bg;
-    border-radius: 5px
-}
- 
-.widget-label {
-    margin: 10px 10px 5px 10px;
-}
- 
-.widget-label>label {
+
+.widget-label > label {
     font-size: 1rem;
     color: @text-color;
 }
- 
+
 .widget-mpris {
     color: @text-color;
     background: @noti-bg-darker;
-    padding: 5px 10px 0px 0px;
-    margin: 5px 10px 5px 10px;
-    border-radius: 0px;
+    padding: 6px 10px;
+    margin: 5px 10px;
+    border-radius: 6px;
 }
- 
+
 .widget-mpris > box > button {
     border-radius: 5px;
 }
- 
-.widget-mpris-player {
-    padding: 5px 10px;
-    margin: 10px
-}
- 
+
 .widget-mpris-title {
     font-weight: 700;
-    font-size: 1.25rem
+    font-size: 1.15rem;
 }
- 
+
 .widget-mpris-subtitle {
-    font-size: 1.1rem
+    font-size: 1rem;
+    color: @text-color-muted;
 }
- 
+
 .widget-buttons-grid {
-    font-size: x-large;
-    padding: 5px;
+    padding: 6px;
     margin: 5px 10px 10px 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     background: @noti-bg-darker;
 }
- 
-.widget-buttons-grid>flowbox>flowboxchild>button {
-    margin: 3px;
-    background: @cc-bg;
-    border-radius: 5px;
-    color: @text-color
+
+.widget-buttons-grid > flowbox > flowboxchild:hover {
+    background: transparent;
 }
- 
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    background: @buttonHovered;
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    margin: 4px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: @cc-bg;
+    border-radius: 6px;
+    color: @text-color;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: @accent;
     color: @cc-bg;
 }
- 
-.widget-menubar>box>.menu-button-bar>button {
+
+.widget-menubar > box > .menu-button-bar > button,
+.topbar-buttons > button {
     border: none;
-    background: transparent
+    background: transparent;
 }
- 
-.topbar-buttons>button {
+
+.widget-volume scale trough {
+    background: @noti-bg;
+    border-radius: 6px;
     border: none;
-    background: transparent
+}
+
+.widget-volume scale highlight {
+    background: @accent;
+    border-radius: 6px;
+}
+
+.widget-volume scale slider:hover {
+    background: @noti-bg;
+}
+
+.widget-volume > box > button {
+    background: @noti-bg-darker;
+    color: @text-color;
+}
+
+.widget-volume > box > button:active,
+.widget-volume > box > button:focus {
+    background: @accent;
+    color: @cc-bg;
 }
