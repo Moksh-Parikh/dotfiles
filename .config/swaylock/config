@@ -1,3 +1,12 @@
 show-failed-attempts
 daemonize
-image=~/.config/sway/Wallpapers/aurora.jpg
+text-color=DEEEED
+clock
+indicator
+indicator-radius=100
+ring-color=555555
+key-hl-color=789978
+inside-color=444444
+inside-ver-color=7788aa
+ring-ver-color=7788aa
+image=~/.config/sway/Wallpapers/Astronaut.jpg
